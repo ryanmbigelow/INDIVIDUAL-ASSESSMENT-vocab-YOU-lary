@@ -12,7 +12,7 @@ const viewWord = (obj) => {
         <p class="card-text bold">${obj.language}</p>
         <hr>
         <i class="btn btn-success fas fa-eye" id="view-word-btn--${obj.firebaseKey}"></i>
-        <i class="fas fa-edit btn btn-info" id="update-word--${obj.firebaseKey}"></i>
+        <i class="fas fa-edit btn btn-info" id="update-word-btn--${obj.firebaseKey}"></i>
         <i class="btn btn-danger fas fa-trash-alt" id="delete-word-btn--${obj.firebaseKey}"></i>
       </div>
     </div>
