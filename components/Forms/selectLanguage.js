@@ -1,4 +1,6 @@
 import { getLanguages } from '../../api/languagesData';
+// import getLanguageByFirebaseKey from '../../api/mergedData';
+// import { getWords } from '../../api/vocabWordsData';
 import renderToDOM from '../../utils/renderToDom';
 
 const selectLanguage = (languageId) => {
@@ -6,13 +8,22 @@ const selectLanguage = (languageId) => {
     <select class="form-control" id="language_id" required>
     <option value="">Select a Language</option>`;
 
+  // getWords().then((wordsArray) => {
+  //   wordsArray.array.forEach((wordObj) => {
+  //     getLanguageByFirebaseKey(wordObj.language_id);
+  //   });
+  // });
+  // domString += '</select>';
+
+  // renderToDOM('#select-language', domString);
+  // };
   getLanguages().then((languagesArray) => {
     languagesArray.forEach((languageObj) => {
       domString += `
-          <option 
-            value="${languageObj.firebaseKey}" 
+          <option
+            value="${languageObj.title}"
             ${languageId === languageObj.firebaseKey ? 'selected' : ''}>
-              ${languageObj.language}
+              ${languageObj.title}
           </option>`;
     });
 

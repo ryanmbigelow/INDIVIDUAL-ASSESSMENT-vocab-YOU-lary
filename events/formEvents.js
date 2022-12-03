@@ -13,7 +13,6 @@ const formEvents = () => {
         language: document.querySelector('#language_id').value,
         userId: '',
         dateSubmitted: '',
-        firebaseKey: '',
       };
       createWord(payload).then(({ word }) => {
         const patchPayload = { firebaseKey: word };
