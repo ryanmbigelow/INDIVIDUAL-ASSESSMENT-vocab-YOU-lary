@@ -14,8 +14,8 @@ const formEvents = () => {
         userId: '',
         dateSubmitted: '',
       };
-      createWord(payload).then(({ word }) => {
-        const patchPayload = { firebaseKey: word };
+      createWord(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
         updateWord(patchPayload).then(() => {
           getWords().then(showVocabWords);
         });
