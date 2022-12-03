@@ -17,10 +17,10 @@ ___
 1. Clone your new repo to your local machine
 
 ## Starting the Project
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. Rename the `.sample.env` file to `.env` file. The final file name should be `.env`
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. To start your application, run `npm start`
+// 1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
+// 1. Rename the `.sample.env` file to `.env` file. The final file name should be `.env`
+// 1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
+// 1. To start your application, run `npm start`
 
 ### If you see this, you are set to go!
 ![lit-screen](https://user-images.githubusercontent.com/29741570/190486162-27e9032d-266f-4962-a85c-fc40c58f33db.png)
@@ -78,3 +78,6 @@ init();
 ## More Info and Resources on Webpack
 - Visit the [Webpack documentation](https://webpack.js.org/concepts/) if you want to explore more.
 - [Info on our Webpack Config](https://github.com/nss-nightclass-projects/Night-Class-Resources/blob/master/book-2-patterns-and-tools/chapters/webpack-configure.md)
+
+## Ryan's Notes
+- DB Diagram: https://dbdiagram.io/d/636dcdd8c9abfc611171de16
