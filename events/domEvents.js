@@ -1,6 +1,7 @@
 import addWordForm from '../components/Forms/addWordForm';
-import { getSingleWord } from '../api/vocabWordsData';
+import { deleteWord, getSingleWord, getWords } from '../api/vocabWordsData';
 import viewWord from '../pages/viewSingleWord';
+import { showVocabWords } from '../pages/vocabWords';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -17,6 +18,13 @@ const domEvents = () => {
     if (e.target.id.includes('update-word-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleWord(firebaseKey).then((word) => addWordForm(word));
+    }
+    // CLICK EVENT FOR DELETE WORD
+    if (e.target.id.includes('delete-word-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      deleteWord(firebaseKey).then(() => {
+        getWords().then(showVocabWords);
+      });
     }
   });
 };

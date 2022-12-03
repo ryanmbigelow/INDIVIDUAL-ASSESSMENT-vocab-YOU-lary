@@ -56,6 +56,25 @@ const updateWord = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// DELETE A WORD
+const deleteWord = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'applications/json'
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
-  getWords, createWord, updateWord, getSingleWord
+  getWords, createWord, updateWord, getSingleWord, deleteWord
 };
