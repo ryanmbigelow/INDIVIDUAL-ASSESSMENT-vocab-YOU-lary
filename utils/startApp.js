@@ -4,7 +4,8 @@ import domBuilder from '../components/Shared/domBuilder';
 import navBar from '../components/Shared/navBar';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
-import { showVocabWords, emptyWords } from '../pages/vocabWords';
+import navigationEvents from '../events/navigationEvents';
+import { showVocabWords } from '../pages/vocabWords';
 
 const startApp = () => {
   domBuilder();
@@ -12,7 +13,7 @@ const startApp = () => {
   formEvents();
   navBar();
   logoutButton();
-  emptyWords();
+  navigationEvents();
   getWords().then((words) => showVocabWords(words));
 };
 
