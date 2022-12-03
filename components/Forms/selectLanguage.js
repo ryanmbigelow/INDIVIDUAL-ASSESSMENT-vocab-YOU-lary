@@ -1,4 +1,4 @@
-import { getLanguages } from '../../api/languagesApi';
+import { getLanguages } from '../../api/languagesData';
 import renderToDOM from '../../utils/renderToDom';
 
 const selectLanguage = (languageId) => {
@@ -7,12 +7,12 @@ const selectLanguage = (languageId) => {
     <option value="">Select a Language</option>`;
 
   getLanguages().then((languagesArray) => {
-    languagesArray.forEach((language) => {
+    languagesArray.forEach((languageObj) => {
       domString += `
           <option 
-            value="${language.firebaseKey}" 
-            ${languageId === language.firebaseKey ? 'selected' : ''}>
-              ${language.language}
+            value="${languageObj.firebaseKey}" 
+            ${languageId === languageObj.firebaseKey ? 'selected' : ''}>
+              ${languageObj.language}
           </option>`;
     });
 

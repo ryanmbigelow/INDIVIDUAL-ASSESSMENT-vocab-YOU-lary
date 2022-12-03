@@ -1,4 +1,4 @@
-import { getWords } from '../api/vocabWordsApi';
+import { getWords } from '../api/vocabWordsData';
 import { showVocabWords } from '../pages/vocabWords';
 
 const navigationEvents = () => {

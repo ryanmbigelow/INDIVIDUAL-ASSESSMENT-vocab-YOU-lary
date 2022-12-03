@@ -15,6 +15,19 @@ const getLanguages = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET SINGLE LANGUAGE
+const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/languages/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 // CREATE A LANGUAGE
 const createLanguage = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages.json`, {
@@ -57,5 +70,5 @@ const getWordsByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  getLanguages, createLanguage, updateLanguage, getWordsByLanguage
+  getLanguages, getSingleLanguage, createLanguage, updateLanguage, getWordsByLanguage
 };

@@ -1,4 +1,4 @@
-import { getWords, createWord, updateWord } from '../api/vocabWordsApi';
+import { getWords, createWord, updateWord } from '../api/vocabWordsData';
 import { showVocabWords } from '../pages/vocabWords';
 
 const formEvents = () => {
@@ -8,8 +8,12 @@ const formEvents = () => {
     if (e.target.id.includes('submit-word')) {
       const payload = {
         title: document.querySelector('#title').value,
-        definition: document.querySelector('definition').value,
-        language_id: document.querySelector('#language_id'),
+        definition: document.querySelector('#definition').value,
+        language_id: document.querySelector('#language_id').value,
+        language: document.querySelector('#language_id').value,
+        userId: '',
+        dateSubmitted: '',
+        firebaseKey: '',
       };
       createWord(payload).then(({ word }) => {
         const patchPayload = { firebaseKey: word };

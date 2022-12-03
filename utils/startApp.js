@@ -1,4 +1,4 @@
-import { getWords } from '../api/vocabWordsApi';
+import { getWords } from '../api/vocabWordsData';
 import logoutButton from '../components/logoutButton';
 import domBuilder from '../components/Shared/domBuilder';
 import navBar from '../components/Shared/navBar';

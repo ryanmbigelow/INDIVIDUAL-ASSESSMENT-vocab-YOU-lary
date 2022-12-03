@@ -1,5 +1,5 @@
 import addWordForm from '../components/Forms/addWordForm';
-import { getSingleWord, updateWord } from '../api/vocabWordsApi';
+import { getSingleWord } from '../api/vocabWordsData';
 import viewWord from '../pages/viewSingleWord';
 
 const domEvents = () => {
@@ -16,7 +16,7 @@ const domEvents = () => {
     // CLICK EVENT FOR UPDATE WORD
     if (e.target.id.includes('update-word-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      updateWord(firebaseKey).then((word) => addWordForm(word));
+      getSingleWord(firebaseKey).then((word) => addWordForm(word));
     }
   });
 };
