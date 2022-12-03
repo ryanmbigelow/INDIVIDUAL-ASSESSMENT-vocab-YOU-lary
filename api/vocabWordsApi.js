@@ -15,6 +15,19 @@ const getWords = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET SINGLE WORD
+const getSingleWord = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 // CREATE A WORD
 const createWord = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocabWords.json`, {
@@ -43,4 +56,6 @@ const updateWord = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getWords, createWord, updateWord };
+export {
+  getWords, createWord, updateWord, getSingleWord
+};
