@@ -2,7 +2,7 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-// GET WORDS
+// GET LANGUAGE
 const getLanguages = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages.json`, {
     method: 'GET',
@@ -15,7 +15,7 @@ const getLanguages = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// CREATE A WORD
+// CREATE A LANGUAGE
 const createLanguage = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages.json`, {
     method: 'POST',
@@ -29,7 +29,7 @@ const createLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// UPDATE A WORD
+// UPDATE A LANGUAGE
 const updateLanguage = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -43,4 +43,19 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getLanguages, createLanguage, updateLanguage };
+// GET WORDS BY LANGUAGE
+const getWordsByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json?orderBy="language_id"&equalTo="${firebaseKey}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
+export {
+  getLanguages, createLanguage, updateLanguage, getWordsByLanguage
+};
