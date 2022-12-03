@@ -1,5 +1,5 @@
 import addWordForm from '../components/Forms/addWordForm';
-import { getSingleWord } from '../api/vocabWordsApi';
+import { getSingleWord, updateWord } from '../api/vocabWordsApi';
 import viewWord from '../pages/viewSingleWord';
 
 const domEvents = () => {
@@ -12,7 +12,11 @@ const domEvents = () => {
     if (e.target.id.includes('view-word-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleWord(firebaseKey).then((word) => viewWord(word));
-      console.warn(firebaseKey);
+    }
+    // CLICK EVENT FOR UPDATE WORD
+    if (e.target.id.includes('update-word-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      updateWord(firebaseKey).then((word) => addWordForm(word));
     }
   });
 };

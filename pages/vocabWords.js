@@ -23,7 +23,7 @@ const showVocabWords = (array) => {
         <p class="card-text bold">${item.language}</p>
         <hr>
         <i class="btn btn-success fas fa-eye" id="view-word-btn--${item.firebaseKey}"></i>
-        <i class="fas fa-edit btn btn-info" id="update-word--${item.firebaseKey}"></i>
+        <i class="fas fa-edit btn btn-info" id="update-word-btn--${item.firebaseKey}"></i>
         <i class="btn btn-danger fas fa-trash-alt" id="delete-word-btn--${item.firebaseKey}"></i>
       </div>
     </div>
