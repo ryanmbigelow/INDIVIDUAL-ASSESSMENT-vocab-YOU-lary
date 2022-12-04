@@ -1,6 +1,13 @@
 import { getWords, createWord, updateWord } from '../api/vocabWordsData';
 import { showVocabWords } from '../pages/vocabWords';
 
+// GET CURRENT DATE
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+const currentDate = `${month}-${day}-${year}`;
+
 const formEvents = () => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -9,10 +16,9 @@ const formEvents = () => {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        language_id: document.querySelector('#language_id').value,
         language: document.querySelector('#language_id').value,
+        dateSubmitted: currentDate,
         userId: '',
-        dateSubmitted: '',
       };
       createWord(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
@@ -28,10 +34,9 @@ const formEvents = () => {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        language_id: document.querySelector('#language_id').value,
         language: document.querySelector('#language_id').value,
         userId: 'userId',
-        dateSubmitted: 'dateSubmitted',
+        dateSubmitted: currentDate,
         firebaseKey,
       };
       updateWord(payload).then(() => {

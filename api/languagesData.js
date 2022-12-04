@@ -69,6 +69,54 @@ const getWordsByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// FILTER JS WORDS
+const filterJsWords = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'applications.json',
+    }
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const filterWords = Object.values(data).filter((item) => item.language === 'JavaScript');
+      resolve(filterWords);
+    })
+    .catch(reject);
+});
+
+// FILTER CSS WORDS
+const filterCssWords = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'applications.json',
+    }
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const filterWords = Object.values(data).filter((item) => item.language === 'CSS');
+      resolve(filterWords);
+    })
+    .catch(reject);
+});
+
+// FILTER CSS WORDS
+const filterHtmlWords = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'applications.json',
+    }
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const filterWords = Object.values(data).filter((item) => item.language === 'HTML');
+      resolve(filterWords);
+    })
+    .catch(reject);
+});
+
 export {
-  getLanguages, getSingleLanguage, createLanguage, updateLanguage, getWordsByLanguage
+  getLanguages, getSingleLanguage, createLanguage, updateLanguage, getWordsByLanguage, filterJsWords, filterCssWords, filterHtmlWords
 };
