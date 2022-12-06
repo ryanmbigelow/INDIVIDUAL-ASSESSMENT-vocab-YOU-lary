@@ -24,9 +24,6 @@ const navBar = () => {
             <li class="nav-item">
             <a class="nav-link" href="#" id="js-vocab-words">JavaScript Words</a>
           </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#" id="vocab-subjects">Vocab Subjects</a>
-          </li>
             <li>
             <input
               class="form-control mr-sm-2"

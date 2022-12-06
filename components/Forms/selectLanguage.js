@@ -11,7 +11,7 @@ const selectLanguage = (user, languageId) => {
       domString += `
           <option
             value="${languageObj.title}"
-            ${languageId === languageObj.firebaseKey ? 'selected' : ''}>
+            ${languageId === languageObj.title ? 'selected' : ''}>
               ${languageObj.title}
           </option>`;
     });
