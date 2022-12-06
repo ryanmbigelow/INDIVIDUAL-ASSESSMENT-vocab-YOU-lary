@@ -8,39 +8,39 @@ const month = date.getMonth() + 1;
 const year = date.getFullYear();
 const currentDate = `${month}-${day}-${year}`;
 
-const formEvents = () => {
+const formEvents = (user) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A BOOK
+    // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A WORD
     if (e.target.id.includes('submit-word')) {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         language: document.querySelector('#language_id').value,
         dateSubmitted: currentDate,
-        userId: '',
+        uid: user.uid,
       };
       createWord(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateWord(patchPayload).then(() => {
-          getWords().then(showVocabWords);
+          getWords(user.uid).then(showVocabWords);
         });
       });
     }
 
-    // TODO: CLICK EVENT FOR EDITING A BOOK
+    // TODO: CLICK EVENT FOR EDITING A WORD
     if (e.target.id.includes('update-word-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         language: document.querySelector('#language_id').value,
-        userId: 'userId',
+        uid: 'uid',
         dateSubmitted: currentDate,
         firebaseKey,
       };
       updateWord(payload).then(() => {
-        getWords().then(showVocabWords);
+        getWords(user.uid).then(showVocabWords);
       });
     }
   });

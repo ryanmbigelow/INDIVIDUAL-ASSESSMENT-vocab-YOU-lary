@@ -3,8 +3,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // GET LANGUAGE
-const getLanguages = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languages.json`, {
+const getLanguages = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/languages.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
 
 // GET WORDS BY LANGUAGE
 const getWordsByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json?orderBy="language_id"&equalTo="${firebaseKey}"`, {
+  fetch(`${endpoint}/vocabWords.json?orderBy="language_id"&equalTo=${firebaseKey}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -70,8 +70,8 @@ const getWordsByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // FILTER JS WORDS
-const filterJsWords = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json`, {
+const filterJsWords = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'applications.json',
@@ -86,8 +86,8 @@ const filterJsWords = () => new Promise((resolve, reject) => {
 });
 
 // FILTER CSS WORDS
-const filterCssWords = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json`, {
+const filterCssWords = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'applications.json',
@@ -102,8 +102,8 @@ const filterCssWords = () => new Promise((resolve, reject) => {
 });
 
 // FILTER CSS WORDS
-const filterHtmlWords = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json`, {
+const filterHtmlWords = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'applications.json',
