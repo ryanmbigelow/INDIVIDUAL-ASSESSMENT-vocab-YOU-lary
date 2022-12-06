@@ -79,5 +79,19 @@ init();
 - Visit the [Webpack documentation](https://webpack.js.org/concepts/) if you want to explore more.
 - [Info on our Webpack Config](https://github.com/nss-nightclass-projects/Night-Class-Resources/blob/master/book-2-patterns-and-tools/chapters/webpack-configure.md)
 
-## Ryan's Notes
-- DB Diagram: https://dbdiagram.io/d/636dcdd8c9abfc611171de16
+## Ryan's README
+                                                    Vocab-YOU-Lary
+
+Description of project, features & user:
+    Vocab-YOU-Lary allows users to keep track of vocab words while studying web development. Students can log in and input their own words. There are three languages to choose from: HTML, CSS, and JavaScript. Words render to the DOM with just the title and language and when the user clicks the green button, the word and its definition appear. If the user clicks the blue button, they can edit the word, and if they click the red button, they can delete the word. Lastly, students can filter through words by language with the navigation bar.
+
+Wireframe (from the instructions): https://www.figma.com/file/IW4jF3GnzCFLYbEXlgFNIZ/MVP
+
+ERD Diagram: https://dbdiagram.io/d/636dcdd8c9abfc611171de16
+
+Deployed Project: https://euphonious-panda-6a1222.netlify.app/
+
+Project Board: https://github.com/ryanmbigelow/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary/issues?q=is%3Aissue+is%3Aclosed
+
+Contributors:
+- Ryan Bigelow https://github.com/ryanmbigelow

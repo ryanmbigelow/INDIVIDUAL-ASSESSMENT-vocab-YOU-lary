@@ -46,28 +46,28 @@ Create issue tickets from the items below to help you get started.
 
 # MVP Requirements
 [MVP Wireframe](https://www.figma.com/file/IW4jF3GnzCFLYbEXlgFNIZ/MVP)
-- [ ] An ERD of your data
-- [ ] Use Firebase for DB and authentication
-- [ ] Technical Flow chart (timebox this)
-- [ ] The app has a navigation bar
+- [x] An ERD of your data
+- [x] Use Firebase for DB and authentication
+- [x] Technical Flow chart (timebox this)
+- [x] The app has a navigation bar
   - [ ] A logo
-  - [ ] Logout button
-  - [ ] Create Entry
-  - [ ] Any other options you would like to add
+  - [x] Logout button
+  - [x] Create Entry
+  - [x] Any other options you would like to add
 
 **The most basic requirement for this project is that a user can:**
-- [ ] Login and Logout of the application using Firebase Google Authentication
-- [ ] only see the vocabulary entries that they created
-- [ ] CREATE a vocabulary entry:
-  - [ ] Title
-  - [ ] Definition
-  - [ ] Language/Tech
-  - [ ] Time submitted - Not on form. Handle in your JS
-  - [ ] user ID - Not on form. Pull from User object.
-- [ ] READ THIER entries
-- [ ] UPDATE THEIR entries
-- [ ] DELETE THEIR entries
-- [ ] Filter by language/tech
+- [x] Login and Logout of the application using Firebase Google Authentication
+- [X] only see the vocabulary entries that they created
+- [x] CREATE a vocabulary entry:
+  - [x] Title
+  - [x] Definition
+  - [x] Language/Tech
+  - [x] Time submitted - Not on form. Handle in your JS
+  - [x] user ID - Not on form. Pull from User object.
+- [x] READ THIER entries
+- [x] UPDATE THEIR entries
+- [x] DELETE THEIR entries
+- [x] Filter by language/tech
 - [ ] Style your application using your own creativity!
 - [ ] No errors - linters should be clean
 
